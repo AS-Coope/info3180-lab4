@@ -62,7 +62,7 @@ def login():
             return redirect(url_for("upload"))
 
         # Remember to flash a message to the user
-        return redirect(url_for("home"))  # The user should be redirected to the upload form instead
+        #return redirect(url_for("home"))  # The user should be redirected to the upload form instead
     return render_template("login.html", form=form)
 
 # user_loader callback. This callback is used to reload the user object from
