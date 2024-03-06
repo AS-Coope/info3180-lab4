@@ -71,6 +71,15 @@ def login():
         #return redirect(url_for("home"))  # The user should be redirected to the upload form instead
     return render_template("login.html", form=form)
 
+
+def get_uploaded_images():
+    rootdir = os.getcwd()
+    print(rootdir)
+    for subdir, dirs, files in os.walk(rootdir + app.config['UPLOAD_FOLDER']):
+        for file in files:
+            print(os.path.join(subdir, file))
+
+
 # user_loader callback. This callback is used to reload the user object from
 # the user ID stored in the session
 @login_manager.user_loader
