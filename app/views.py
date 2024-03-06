@@ -59,7 +59,7 @@ def login():
         # You will need to import the appropriate function to do so.
         # Then store the result of that query to a `user` variable so it can be
         # passed to the login_user() method below.
-        user = db.session.execute(db.select(UserProfile).filter_by(username=username).scalar())
+        user = db.session.execute(db.select(UserProfile).filter_by(username=username)).scalar()
 
         if user is not None and check_password_hash(user.password, password):
             # Gets user id, load into session
