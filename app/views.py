@@ -35,6 +35,9 @@ def upload():
         photo = form.photo.data
 
         photoname = secure_filename(photo.filename)
+        photo.save(os.path.join(
+            app.config['UPLOAD_FOLDER'], photoname
+        ))
         flash('File Saved', 'success')
         return redirect(url_for('home')) # Update this to redirect the user to a route that displays all uploaded image files
 
