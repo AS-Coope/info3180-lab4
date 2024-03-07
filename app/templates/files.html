@@ -2,6 +2,8 @@
 
 {% block main %}
 {% for file in photofiles %}
-<img src="{{ url_for('get_image', filename=file)}}" />
+<div class="images">
+    <img src="{{ url_for('get_image', filename=file)}}" />
+</div>
 {% endfor %}
 {% endblock %}
