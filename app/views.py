@@ -87,7 +87,7 @@ def get_uploaded_images():
     #print(rootdir)
     for subdir, dirs, files in os.walk(rootdir + app.config['UPLOAD_FOLDER']):
         for file in files:
-            filenames.append(os.path.join(subdir, file))
+            filenames.append(file)
 
     return filenames
 
