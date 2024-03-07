@@ -53,6 +53,14 @@ def files():
     filepathlist = get_uploaded_images()
     return render_template('files.html', photofiles=filepathlist)
 
+@app.route("/logout")
+@login_required
+def logout():
+    # Logout the user and end the session
+    logout_user()
+    flash('You have been successfully logged out.', 'success')
+    return redirect(url_for('home'))
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     form = LoginForm()
