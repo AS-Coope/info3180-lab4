@@ -47,10 +47,11 @@ def upload():
 
     return render_template('upload.html', form=form)
 
-@app.route('files')
+@app.route('/files')
 @login_required
 def files():
-    render_template("url_for(files)", photofiles = get_uploaded_images())
+    filepathlist = get_uploaded_images()
+    return render_template('files.html', photofiles=filepathlist)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
