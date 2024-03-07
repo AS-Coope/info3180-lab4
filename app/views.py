@@ -50,7 +50,7 @@ def upload():
 @app.route('files')
 @login_required
 def files():
-    render_template("url_for(files)")
+    render_template("url_for(files)", photofiles = get_uploaded_images())
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
