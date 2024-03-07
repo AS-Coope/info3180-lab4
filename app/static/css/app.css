@@ -18,3 +18,16 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.images {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.images img {
+    justify-self: center;
+    width: 10em;
+    height: 10rem;
+}
